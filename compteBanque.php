@@ -16,10 +16,19 @@ class Compte {
         $this->depot = $depot;
         return $this->somme + $this->depot;
     }
+    public function retrait($retrait) {
+        $this->retrait = $retrait;
+        if($this->somme > $this->retrait) {
+            return ($this->depot + $this->somme) - $this->retrait;
+        } else {
+            return "vous ne pouvez pas retirer";
+        }
+    }
 }
 
 
 $user1 = new Compte(19000, 3);
 echo "{$user1->affiche()}<br/>";
-echo "{$user1->depots(20000)}";
+echo "{$user1->depots(20000)}<br/>";
+echo "{$user1->retrait(40000)}";
 ?>
