@@ -10,7 +10,7 @@ class Compte {
     }
 
     public function affiche() {
-        return "Compte ($this->somme €, $this->taux %)";
+        return "Compte ($this->somme €, $this->taux%)";
     }
     public function depots ($depot) {
         $this->depot = $depot;
@@ -24,11 +24,16 @@ class Compte {
             return "vous ne pouvez pas retirer";
         }
     }
+
+    public function interets() {
+        return ($this->taux * $this->somme / 103) + ($this->depot + $this->somme);
+    }
 }
 
 
-$user1 = new Compte(19000, 3);
+$user1 = new Compte(19000, 5);
 echo "{$user1->affiche()}<br/>";
 echo "{$user1->depots(20000)}<br/>";
-echo "{$user1->retrait(40000)}";
+echo "{$user1->retrait(40000)}<br/>";
+echo "{$user1->interets()}";
 ?>
