@@ -11,7 +11,7 @@ class Point {
     }
 
     public function affiche() {
-        return "$this->x $this->y";
+        return "x = $this->x, y = $this->y";
     }
 
     public function translateTx ($tx) {
