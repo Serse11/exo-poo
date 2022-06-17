@@ -26,7 +26,7 @@ class Compte {
     }
 
     public function interets() {
-        return ($this->taux * $this->somme / 103) + ($this->depot + $this->somme);
+        return ($this->taux * $this->somme / 100) + ($this->depot + $this->somme);
     }
 }
 
@@ -34,6 +34,6 @@ class Compte {
 $user1 = new Compte(19000, 5);
 echo "{$user1->affiche()}<br/>";
 echo "{$user1->depots(20000)}<br/>";
-echo "{$user1->retrait(40000)}<br/>";
+echo "{$user1->retrait(4000)}<br/>";
 echo "{$user1->interets()}";
 ?>
